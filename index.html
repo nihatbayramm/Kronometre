@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>KPSS Çalışma Sayacı</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- CHART -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div class="dashboard">
+
+    <!-- SOL PANEL -->
+    <div class="card">
+        <h1>KPSS Çalışma</h1>
+
+        <div class="timer">
+            <span id="time">00:00:00</span>
+        </div>
+
+        <div class="btn-group">
+            <button id="startBtn" onclick="startTimer()">Başlat</button>
+            <button id="stopBtn" onclick="stopTimer()">Durdur</button>
+            <button id="resetBtn" onclick="resetTimer()">Sıfırla</button>
+        </div>
+
+        <div class="lesson-input">
+            <input type="text" id="lessonName" placeholder="Ders adı...">
+            <button id="saveBtn" onclick="saveLesson()">Kaydet</button>
+        </div>
+
+        <!-- MANUEL -->
+        <div class="manual-card">
+            <h3>✍️ Manuel Ekle</h3>
+
+            <input type="text" id="manualLesson" placeholder="Ders adı">
+
+            <div class="manual-time">
+                <input type="number" id="manualHour" placeholder="Saat" min="0">
+                <input type="number" id="manualMinute" placeholder="Dakika" min="0" max="59">
+            </div>
+
+            <button onclick="addManual()">Ekle</button>
+        </div>
+    </div>
+
+    <!-- ORTA PANEL -->
+    <div class="side-panel">
+        <h2>📚 Kayıtlı Çalışmalar</h2>
+        <div class="list" id="lessonList"></div>
+    </div>
+
+    <!-- SAĞ PANEL -->
+    <div class="report-panel">
+        <h2>📊 Rapor</h2>
+
+        <div class="report-box">
+            <span>Toplam Süre</span>
+            <strong id="totalTime">00:00:00</strong>
+        </div>
+
+        <button class="show-report" onclick="toggleChart()">
+            📈 Raporu Göster
+        </button>
+
+        <canvas id="reportChart" style="display:none; margin-top:14px;"></canvas>
+
+        <div class="report-box">
+            <span>En Çok Çalışılan</span>
+            <strong id="topLesson">-</strong>
+        </div>
+
+        <h3>Ders Bazlı</h3>
+        <ul id="lessonReport"></ul>
+
+        <button class="reset-report" onclick="resetReports()">
+            🗑 Raporları Sıfırla
+        </button>
+    </div>
+
+</div>
+
+<!-- JS -->
+<script src="script.js"></script>
+</body>
+</html>
