@@ -1,4 +1,4 @@
-# 📊 KPSS Çalışma Takip Paneli
+# 📊 KPSS Çalışma Takip Paneli (https://nihatbayramm.github.io/Kronometre/)
 
 KPSS’ye hazırlananlar için **şık**, **hızlı** ve **kullanımı kolay** bir çalışma takip paneli.  
 Kronometreyle ders kaydet, manuel giriş yap, raporları gör ve grafiklerle ilerlemeni izle.
